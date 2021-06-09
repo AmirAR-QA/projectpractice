@@ -1,6 +1,6 @@
 from flask import redirect, url_for, request, Response, jsonify
 from application import app
-import random
+import random, requests
 
 @app.route('/result', methods = ['GET', 'POST'])
 def returnresult():

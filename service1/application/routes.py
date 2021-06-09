@@ -3,7 +3,7 @@ from application import app, db
 from application.models import Encounters, Adventure
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import desc
-import random
+import random, requests
 from os import getenv
 
 @app.route('/', methods = ['GET', 'POST'])
@@ -11,7 +11,7 @@ from os import getenv
 def home():
     form = Adventure()
     if request.method == 'GET':
-        return render_template("home.html", title='Class', form=form)
+        return render_template("home.html", form=form)
     if form.validate_on_submit():
         get_encounter = requests.get('http://service2:5001/encounter')
         your_adventure = get_encounter.text
