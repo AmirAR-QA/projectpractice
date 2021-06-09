@@ -1,23 +1,18 @@
 <html>
-    <header>
-        <title>
-            A (not so) random encounter – Home
-        </title>
-    </header>
-	<div class='form'>
-        <form method = 'POST' action="">
-            {{ form.hidden_tag() }}
-            <div class = "submitform">
-                {{form.submit}}
-            </div>
-        </form>
-    </div>
+    <title>A (not so) random adventure!</title>
     <body>
-        <h1>Your adventure</h1>
+        <h1>A (not so) random adventure!</h1>
+        <div class = 'form'>
+            <form method='POST' action="">
+                {{ form.hidden_tag() }}
+                {{ form.adventuring }}
+            </form>
+        </div>
+        <h2>Your adventure</h2>
         <p>
             Oh no, you've run in to {{ your_adventure }} in {{ your_location }}! What's going to happen? Aaaaaah! {{ your_encounter }}
         </p>
-        <h2>Previous adventures:</h2>
+        <h3>Previous adventures:</h3>
         <p>
             {% for encounters in all_adventures %}
             On a previous episode of random adventures, you met {{ encounters.encounter }}

@@ -8,5 +8,5 @@ class Encounters(db.Model):
     location = db.Column(db.String(100), nullable=False)
     outcomes = db.Column(db.String(500), nullable=False)
 
-class Adventure(FlaskForm):
+class Form(FlaskForm):
     adventuring = SubmitField("What lies ahead?")
