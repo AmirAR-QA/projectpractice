@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+    service_1:
+        image: aabdur-rahman/service1
+        build: ./service1
+        ports:
+            - '5000:5000'
+        environment:
+            DATABASE_URI: ${DATABASE_URI}
+            SECRET_KEY: ${SECRET_KEY}
+    service_2:
+        image: aabdur-rahman/service2
+        build: ./service2
+        ports:
+            - '5001:5001'
+    service_3:
+        image: aabdur-rahman/service3
+        build: ./service3
+        ports:
+            - '5002:5002'
+    service_4:
+        image: aabdur-rahman/service4
+        build: ./service4
+        ports:
+            - '5003:5003'
