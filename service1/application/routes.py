@@ -28,4 +28,4 @@ def home():
         
         all_adventures = encounters.query.order_by(desc(encounters.id)).limit(5).all()
 
-        return render_template('home.html', title='Class', form=form, encounter=your_adventure, location=your_location, result=result, all_adventures=all_adventures)
+        return render_template('home.html', form=form, encounter=your_adventure, location=your_location, result=result, all_adventures=all_adventures)

@@ -3,6 +3,7 @@ services:
     service_1:
         image: aabdur-rahman/service1
         build: ./service1
+        container_name: service1
         ports:
             - target: 5000
               published: 5000
@@ -17,6 +18,7 @@ services:
     service_2:
         image: aabdur-rahman/service2
         build: ./service2
+        container_name: service2
         ports:
             - target: 5001
               published: 5001
@@ -24,6 +26,7 @@ services:
     service_3:
         image: aabdur-rahman/service3
         build: ./service3
+        container_name: service3
         ports:
             - target: 5002
               published: 5002
@@ -31,6 +34,7 @@ services:
     service_4:
         image: aabdur-rahman/service4
         build: ./service4
+        container_name: service4
         ports:
             - target: 5003
               published: 5003
