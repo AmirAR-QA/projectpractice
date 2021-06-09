@@ -10,8 +10,8 @@ from os import getenv
 @app.route('/home', methods = ['GET', 'POST'])
 def home():
     form = Form()
-    # if request.method == 'GET':
-    #     return render_template("home.html", form=form)
+    if request.method == 'GET':
+        return render_template("home.html", form=form)
     if form.validate_on_submit():
         get_encounter = requests.get('http://service2:5001/encounter')
         your_adventure = get_encounter.text
@@ -28,4 +28,4 @@ def home():
         
         all_adventures = encounters.query.order_by(desc(encounters.id)).limit(5).all()
 
-        return render_template('home.html', form=form, encounter=your_adventure, location=your_location, result=result, all_adventures=all_adventures)
+        return render_template('home.html', title='Class', form=form, encounter=your_adventure, location=your_location, result=result, all_adventures=all_adventures)
