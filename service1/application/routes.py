@@ -3,7 +3,7 @@ from application import app, db
 from application.models import Encounters, Adventure
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import desc
-import requests, random
+import random
 from os import getenv
 
 @app.route('/', methods = ['GET', 'POST'])
