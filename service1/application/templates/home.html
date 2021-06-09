@@ -5,11 +5,13 @@
         </title>
     </header>
 	<div class='form'>
-		<form method='POST' action=''>
-			{{ form.hidden_tag() }}
-				<div class='form_group'>
-				{{ form.submit }}
-	</div>
+        <form method = 'POST' action="">
+            {{ form.hidden_tag() }}
+            <div class = "submitform">
+                {{form.submit}}
+            </div>
+        </form>
+    </div>
     <body>
         <h1>Your adventure</h1>
         <p>
