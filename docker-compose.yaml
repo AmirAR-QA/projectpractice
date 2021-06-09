@@ -1,6 +1,6 @@
 version: '3.8'
 services:
-    service_1:
+    service1:
         image: aabdur-rahman/service1
         build: ./service1
         container_name: service1
@@ -15,7 +15,7 @@ services:
         environment:
             DATABASE_URI: ${DATABASE_URI}
             SECRET_KEY: ${SECRET_KEY}
-    service_2:
+    service2:
         image: aabdur-rahman/service2
         build: ./service2
         container_name: service2
@@ -23,7 +23,7 @@ services:
             - target: 5001
               published: 5001
               protocol: tcp
-    service_3:
+    service3:
         image: aabdur-rahman/service3
         build: ./service3
         container_name: service3
@@ -31,7 +31,7 @@ services:
             - target: 5002
               published: 5002
               protocol: tcp
-    service_4:
+    service4:
         image: aabdur-rahman/service4
         build: ./service4
         container_name: service4
