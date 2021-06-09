@@ -8,10 +8,10 @@ services:
             - target: 5000
               published: 5000
               protocol: tcp
-              depends_on: 
-                - service2
-                - service3
-                - service4
+        depends_on: 
+            - service2
+            - service3
+            - service4
         environment:
             DATABASE_URI: ${DATABASE_URI}
             SECRET_KEY: ${SECRET_KEY}
