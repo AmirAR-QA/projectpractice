@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, url_for, Response
 from application import app, db
-from application.models import Encounters, Adventure
+from application.models import Encounters, Form
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import desc
 import random, requests
@@ -19,7 +19,7 @@ def home():
         your_location = get_location.text
         result = requests.post('http://service4:5003/result', data=your_adventure)
         your_encounter = result.text
-        data = encounters(
+        data = Encounters(
                 encounter = your_encounter,
                 location = your_location,
                 outcomes = result)
