@@ -1,4 +1,3 @@
-from service2.application.routes import encounter
 from flask import Flask, render_template, request, url_for, Response
 from application import app, db
 from application.models import Encounters, Adventure
