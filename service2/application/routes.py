@@ -4,6 +4,6 @@ import random
 
 @app.route('/encounter', methods=['GET'])
 def encounter():
-    encounters = ("a giant rat","a giant goat","a pack of firebreathing lizards","a very small dwarf","an evil pig summoning wizard")
-    random_encounters = random.choice(encounters)
+    encounter = ("a giant rat","a giant goat","a pack of firebreathing lizards","a very small dwarf","an evil pig summoning wizard")
+    random_encounters = random.choice(encounter)
     return Response(random_encounters)

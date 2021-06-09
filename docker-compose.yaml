@@ -4,7 +4,13 @@ services:
         image: aabdur-rahman/service1
         build: ./service1
         ports:
-            - '5000:5000'
+            - target: 5000
+              published: 5000
+              protocol: tcp
+              depends_on: 
+                - service2
+                - service3
+                - service4
         environment:
             DATABASE_URI: ${DATABASE_URI}
             SECRET_KEY: ${SECRET_KEY}
@@ -12,14 +18,21 @@ services:
         image: aabdur-rahman/service2
         build: ./service2
         ports:
-            - '5001:5001'
+            - target: 5001
+              published: 5001
+              protocol: tcp
     service_3:
         image: aabdur-rahman/service3
         build: ./service3
         ports:
-            - '5002:5002'
+            - target: 5002
+              published: 5002
+              protocol: tcp
     service_4:
         image: aabdur-rahman/service4
         build: ./service4
         ports:
-            - '5003:5003'
+            - target: 5003
+              published: 5003
+              protocol: tcp
+            
