@@ -19,13 +19,12 @@ def home():
         your_location = get_location.text
         result = requests.post('http://service4:5003/result', data=your_adventure)
         your_encounter = result.text
-        data = Encounters(
-                encounter = your_encounter,
-                location = your_location,
-                outcomes = result)
+
+        data = Encounters(encounter = your_adventure, location = your_location, outcome = result)
+
+        all_adventures = encounters.query.order_by(desc(encounters.id)).limit(5).all()
+
         db.session.add(data)
         db.session.commit()
-        
-        all_adventures = encounters.query.order_by(desc(encounters.id)).limit(5).all()
 
         return render_template('home.html', title='Class', form=form, encounter=your_adventure, location=your_location, result=result, all_adventures=all_adventures)
