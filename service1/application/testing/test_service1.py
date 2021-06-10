@@ -17,12 +17,11 @@ class TestHome(TestCase):
 class TestQuery(TestHome):
     def test_index(self):
         with mock() as mocks:
-            # form = Form
-            # test1 = self.client.get(url_for("home"))
-            # self.assert200(test1)
+            form = Form
+            test1 = self.client.get(url_for("home"))
+            self.assert200(test1)
             mocks.get('http://service_2:5001/encounter', text='a giant rat')
             mocks.get('http://service_3:5002/location', text='in a cave')
             mocks.post('http://service_4:5003/result', text='You manage to escape by sacrificing one of your boots')
             response = self.client.post(url_for("home"))
-            self.assertEqual(response.status_code, 200)
             self.assertIn(b'a giant rat', response.data)
