@@ -15,7 +15,7 @@
         <h3>Previous adventures:</h3>
         <p>
             {% for encounters in all_adventures %}
-            On a previous episode of random adventures, you met {{ encounters.encounter }}
+            On a previous episode of random adventures, you met {{ encounters.encounter }} {{ encounters.location }}
             <br>
             {% endfor %}
         </p>

@@ -13,18 +13,15 @@ def home():
     if request.method == 'GET':
         return render_template("home.html", form=form)
     if form.validate_on_submit():
-        get_encounter = requests.get('http://service2:5001/encounter')
-        your_adventure = get_encounter.text
-        get_location = requests.get('http://service3:5002/location')
-        your_location = get_location.text
-        result = requests.post('http://service4:5003/result', data=your_adventure)
-        your_encounter = result.text
+        your_adventure = requests.get('http://service2:5001/encounter').text
+        your_location = requests.get('http://service2:5002/location').text
+        your_encounter = requests.post('http://service4:5003/result', data=your_adventure).text
 
-        data = Encounters(encounter = your_adventure, location = your_location, outcomes = your_encounter)
+        data2 = Encounters(encounter = your_adventure, location = your_location, outcomes = your_encounter)
 
         all_adventures = Encounters.query.order_by(desc(Encounters.id)).limit(5).all()
 
-        db.session.add(data)
+        db.session.add(data2)
         db.session.commit()
 
-        return render_template('home.html', title='Class', form=form, encounter=your_adventure, location=your_location, result=result, all_adventures=all_adventures)
+        return render_template('home.html', title='Class', form=form, encounter=your_adventure, location=your_location, result=your_encounter, all_adventures=all_adventures)
