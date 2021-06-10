@@ -24,4 +24,4 @@ class TestQuery(TestHome):
             mocks.get('http://service_3:5002/location', text='in a cave')
             mocks.post('http://service_4:5003/result', text='You manage to escape by sacrificing one of your boots')
             response = self.client.post(url_for("home"))
-            self.assertIn(b'a giant rat', response.data)
+            self.assertIn(test1'a giant rat', response.data)
