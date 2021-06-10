@@ -9,9 +9,11 @@
             </form>
         </div>
         <h2>Your adventure</h2>
+        {% if your_adventure %}
         <p>
             Oh no, you've run in to {{ your_adventure }} in {{ your_location }}! What's going to happen? Aaaaaah! {{ your_encounter }}
         </p>
+        {% endif %}
         <h3>Previous adventures:</h3>
         <p>
             {% for encounters in all_adventures %}
