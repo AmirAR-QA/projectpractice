@@ -20,7 +20,7 @@ def home():
         result = requests.post('http://service4:5003/result', data=your_adventure)
         your_encounter = result.text
 
-        data = Encounters(encounter = your_adventure, location = your_location, outcome = result)
+        data = Encounters(encounter = your_adventure, location = your_location, outcomes = your_encounter)
 
         all_adventures = encounters.query.order_by(desc(encounters.id)).limit(5).all()
 
