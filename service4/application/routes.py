@@ -4,7 +4,7 @@ import random, requests
 
 @app.route('/result', methods = ['GET', 'POST'])
 def returnresult():
-    encounter_result = "What happened!"
+    encounter_result = "This encounter has been censored because of excessive silliness"
     encounters = request.data.decode('utf-8')
 
     outcomes_rat = ["You manage to escape by sacrificing one of your boots","you've tamed the rat, glory be to the great rat rider!"]
