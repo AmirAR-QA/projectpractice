@@ -25,3 +25,5 @@ def home():
         db.session.commit()
 
         return render_template('home.html', title='Class', form=form, encounter=your_adventure, location=your_location, result=your_encounter, all_adventures=all_adventures)
+
+    return render_template('home.html', form=form)
