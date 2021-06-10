@@ -14,7 +14,7 @@ def home():
         return render_template("home.html", form=form)
     if form.validate_on_submit():
         your_adventure = requests.get('http://service2:5001/encounter').text
-        your_location = requests.get('http://service2:5002/location').text
+        your_location = requests.get('http://service3:5002/location').text
         your_encounter = requests.post('http://service4:5003/result', data=your_adventure).text
 
         data2 = Encounters(encounter = your_adventure, location = your_location, outcomes = your_encounter)
