@@ -39,4 +39,3 @@ services:
             - target: 5003
               published: 5003
               protocol: tcp
-            
