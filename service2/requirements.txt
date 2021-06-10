@@ -11,7 +11,5 @@ flask-testing
 pymysql
 itsdangerous==1.1.0
 MarkupSafe==1.1.1
-Flask-WTF==0.14.3
-PyMySQL==0.9.3
 requests
 requests_mock
