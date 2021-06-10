@@ -14,7 +14,7 @@ class TestHome(TestCase):
         db.create_all()
         return app
 
-class TestQuery(TestBase):
+class TestQuery(TestHome):
     def test_index(self):
         with mock() as mocks:
             form = Form
