@@ -22,7 +22,7 @@ def home():
 
         data = Encounters(encounter = your_adventure, location = your_location, outcomes = your_encounter)
 
-        all_adventures = encounters.query.order_by(desc(encounters.id)).limit(5).all()
+        all_adventures = Encounters.query.order_by(desc(Encounters.id)).limit(5).all()
 
         db.session.add(data)
         db.session.commit()
