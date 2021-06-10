@@ -20,8 +20,9 @@ class TestQuery(TestHome):
             form = Form
             test1 = self.client.get(url_for("home"))
             self.assert200(test1)
-            mocks.get('http://service_2:5001/encounter', text='a giant rat')
-            mocks.get('http://service_3:5002/location', text='in a cave')
-            mocks.post('http://service_4:5003/result', text='You manage to escape by sacrificing one of your boots')
+            mocks.get('http://service2:5001/encounter', text="a giant rat")
+            mocks.get('http://service3:5002/location', text='in a cave')
+            mocks.post('http://service4:5003/result', text='You manage to escape by sacrificing one of your boots')
             response = self.client.post(url_for("home"))
-            self.assertIn(test1'a giant rat', response.data)
+        self.assert200(response)
+        self.assertIn("a giant rat", response.data.decode())
