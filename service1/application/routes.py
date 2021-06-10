@@ -10,8 +10,8 @@ from os import getenv
 @app.route('/home', methods = ['GET', 'POST'])
 def home():
     form = Form()
-    if request.method == 'GET':
-        return render_template("home.html", form=form)
+    # if request.method == 'GET':
+    #     return render_template("home.html", form=form)
     if form.validate_on_submit():
         your_adventure = requests.get('http://service2:5001/encounter').text
         your_location = requests.get('http://service3:5002/location').text
