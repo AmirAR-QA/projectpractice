@@ -1,14 +1,12 @@
 from flask_testing import TestCase
 from flask import url_for
-import requests
-from requests_mock import mock
 from application import app
 
 class TestBase(TestCase):
     def create_app(self):
         return app
 
-class TestQuery(TestHome):
+class TestQuery(Test Base):
     def test_service4(self):
         response = self.client.post(url_for('home'), data='a pack of firebreathing lizards,on the outskirts of a city')
         self.assert200(response)

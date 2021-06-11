@@ -1,7 +1,5 @@
 from flask_testing import TestCase
 from flask import url_for
-import requests
-from requests_mock import mock
 from application import app
 
 class TestHome(TestCase):
