@@ -2,8 +2,7 @@ from flask_testing import TestCase
 from flask import url_for
 import requests
 from requests_mock import mock
-from application import app, encounter
-from application.models import Form
+from application import app
 
 class TestBase(TestCase):
     def create_app(self):
