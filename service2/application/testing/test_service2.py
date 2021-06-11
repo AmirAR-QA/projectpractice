@@ -4,12 +4,11 @@ import requests
 from requests_mock import mock
 from application import app
 
-class TestBase(TestCase):
+class TestHome(TestCase):
     def create_app(self):
-        app.config.update(DEBUG = True)
         return app
 
-class TestQuery(TestCase):
+class TestQuery(TestHome):
     def test_service2(self):
         
         response = self.client.get(url_for("encounter"))
