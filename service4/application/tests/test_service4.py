@@ -1,6 +1,6 @@
 from flask_testing import TestCase
 from flask import url_for
-from application import app
+from service4.app import app
 
 class TestBase(TestCase):
     def create_app(self):
@@ -8,7 +8,7 @@ class TestBase(TestCase):
 
 class TestQuery(TestBase):
     def test_service4(self):
-        response = self.client.post(url_for('home'), data='a pack of firebreathing lizards,on the outskirts of a city')
+        response = self.client.post(url_for('result'), data='a pack of firebreathing lizards')
         self.assert200(response)
-        expected = "Oh no, you've run in to a pack of firebreathing lizards in on the outskirts of a city! What's going to happen? Aaaaaah! you manage to escape the lizards, though a little singed"
+        expected = ("you manage to escape the lizards, though a little singed","You engage in hours of intense diplomacy, the lizards have become your vassals! glory be to the lizard king!")
         self.assertEqual(response.data.decode('utf-8'), expected)
